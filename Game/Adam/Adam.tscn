@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8xgpruoc20da"]
+
+[ext_resource type="Script" path="res://Andrew/RigidBody2D.cs" id="1_kesc2"]
+[ext_resource type="Texture2D" uid="uid://b1vg8w768enlq" path="res://Assets/standin.png" id="2_b4c6a"]
+[ext_resource type="Texture2D" uid="uid://cc8b0fln6no2j" path="res://icon.svg" id="2_gbp0k"]
+[ext_resource type="Script" path="res://Adam/Ground.cs" id="3_wsdh5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3loqr"]
+radius = 62.0322
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6ynv"]
+size = Vector2(128.052, 135.713)
+
+[node name="Adam" type="Node2D"]
+position = Vector2(119, 762)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(-6, -86)
+script = ExtResource("1_kesc2")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+scale = Vector2(0.111285, 0.111285)
+texture = ExtResource("2_b4c6a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_3loqr")
+
+[node name="Camera2D" type="Camera2D" parent="RigidBody2D"]
+limit_left = 0
+limit_top = 0
+limit_bottom = 0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." node_paths=PackedStringArray("shootie")]
+position = Vector2(1637, 274)
+scale = Vector2(29.16, 0.280002)
+script = ExtResource("3_wsdh5")
+shootie = NodePath("../RigidBody2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("2_gbp0k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.274351, 3.57129)
+shape = SubResource("RectangleShape2D_t6ynv")
