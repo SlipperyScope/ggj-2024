@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://ci7unvb5j335k"]
+
+[ext_resource type="Texture2D" uid="uid://cgksf3kfpx6a1" path="res://Assets/Art/character/heads/robot/robot-head-base.png" id="1_h1rvx"]
+[ext_resource type="Texture2D" uid="uid://df0wtgsjirlyp" path="res://Assets/Art/character/heads/robot/robot-head-eye-left.png" id="2_r11n2"]
+[ext_resource type="Texture2D" uid="uid://bbpxpx3nag2nq" path="res://Assets/Art/character/heads/robot/robot-head-eye-right.png" id="3_k6ldk"]
+[ext_resource type="Texture2D" uid="uid://be8pv3ldf3k7b" path="res://Assets/Art/character/heads/robot/robot-head-mouth.png" id="4_52itc"]
+[ext_resource type="Texture2D" uid="uid://l1hoxwds0gra" path="res://Assets/Art/character/heads/robot/robot-head-ornament.png" id="5_6a5ic"]
+[ext_resource type="Texture2D" uid="uid://gxg82ygwfeys" path="res://Assets/Art/character/heads/robot/robot-head-chin-end.png" id="6_vuigl"]
+[ext_resource type="Texture2D" uid="uid://buray2je86ytg" path="res://Assets/Art/character/heads/robot/robot-head-chin-base.png" id="7_e5h1j"]
+
+[node name="Robot" type="Node2D"]
+
+[node name="Ornament" type="Sprite2D" parent="."]
+position = Vector2(65, -130)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_6a5ic")
+
+[node name="Base" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_h1rvx")
+
+[node name="EyeLeft" type="Sprite2D" parent="."]
+position = Vector2(-43, -34)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_r11n2")
+
+[node name="EyeRight" type="Sprite2D" parent="."]
+position = Vector2(49, -43)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_k6ldk")
+
+[node name="Chin" type="Node2D" parent="."]
+position = Vector2(0, 78)
+
+[node name="End" type="Sprite2D" parent="Chin"]
+position = Vector2(0, 114)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_vuigl")
+
+[node name="Base" type="Sprite2D" parent="Chin"]
+position = Vector2(0, 49)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_e5h1j")
+
+[node name="Mouth" type="Sprite2D" parent="."]
+position = Vector2(-1, 53)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_52itc")
