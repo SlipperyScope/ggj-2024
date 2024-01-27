@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://cp1gqewrevyy"]
+
+[ext_resource type="Script" path="res://Andrew/RigidBody2D.cs" id="1_3q5c5"]
+[ext_resource type="Texture2D" uid="uid://cc8b0fln6no2j" path="res://icon.svg" id="1_xrr73"]
+[ext_resource type="Script" path="res://Andrew/Area2D.cs" id="3_dxwmx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6w5sm"]
+size = Vector2(122, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anbg2"]
+size = Vector2(2494, 189.331)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3xa3"]
+size = Vector2(2499.2, 111.922)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lg635"]
+size = Vector2(507, 427)
+
+[node name="Andrew" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(180, 575)
+script = ExtResource("1_3q5c5")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("1_xrr73")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_6w5sm")
+
+[node name="Camera2D" type="Camera2D" parent="RigidBody2D"]
+limit_left = 0
+limit_top = 0
+limit_bottom = 0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(636, 2795)
+rotation = -1.48919
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_anbg2")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+scale = Vector2(19.5469, 0.171875)
+texture = ExtResource("1_xrr73")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(588, 905)
+rotation = 0.0680805
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("RectangleShape2D_x3xa3")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+scale = Vector2(19.5469, 0.171875)
+texture = ExtResource("1_xrr73")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(811, 732)
+gravity_space_override = 3
+gravity = 0.0
+script = ExtResource("3_dxwmx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(185, -312)
+shape = SubResource("RectangleShape2D_lg635")

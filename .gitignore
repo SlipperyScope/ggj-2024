@@ -256,4 +256,4 @@ gcov.css
 tests/data/*.translation
 Game/Levels/Game.tscn
 
-Game/.godot/*
+Game/.godot/
