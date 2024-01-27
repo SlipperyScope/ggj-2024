@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://c8xgpruoc20da"]
 
 [ext_resource type="Script" path="res://Andrew/RigidBody2D.cs" id="1_kesc2"]
+[ext_resource type="Texture2D" uid="uid://baqxei4q5k1s8" path="res://Assets/Art/background/bg-layer-2.png" id="1_s4gc8"]
 [ext_resource type="Texture2D" uid="uid://b1vg8w768enlq" path="res://Assets/standin.png" id="2_b4c6a"]
-[ext_resource type="Texture2D" uid="uid://cc8b0fln6no2j" path="res://icon.svg" id="2_gbp0k"]
+[ext_resource type="Texture2D" uid="uid://dhtbwhrf42js1" path="res://Assets/Art/background/bg-layer-1.png" id="2_pstka"]
 [ext_resource type="Script" path="res://Adam/Ground.cs" id="3_wsdh5"]
-[ext_resource type="Texture2D" uid="uid://bvmfjjshfe2hq" path="res://Assets/background.png" id="5_ncisv"]
 [ext_resource type="Texture2D" uid="uid://byypxo81147m4" path="res://Assets/Rainbow.png" id="6_jjixr"]
 [ext_resource type="Script" path="res://Adam/Rainbow.cs" id="6_r5vwb"]
 
@@ -23,11 +23,6 @@ size = Vector2(253, 247)
 
 [node name="Adam" type="Node2D"]
 position = Vector2(119, 762)
-
-[node name="background" type="Sprite2D" parent="."]
-position = Vector2(9443.45, -7589.88)
-scale = Vector2(14.6257, 14.4696)
-texture = ExtResource("5_ncisv")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2(-6, -86)
@@ -54,9 +49,6 @@ scale = Vector2(29.16, 0.280002)
 script = ExtResource("3_wsdh5")
 shootie = NodePath("../RigidBody2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-texture = ExtResource("2_gbp0k")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0.274351, 3.57129)
 shape = SubResource("RectangleShape2D_t6ynv")
@@ -73,3 +65,29 @@ shape = SubResource("RectangleShape2D_73mns")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 texture = ExtResource("6_jjixr")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(30334, 188)
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 3
+position = Vector2(-942, 321)
+scale = Vector2(0.587826, 0.587826)
+texture = ExtResource("1_s4gc8")
+region_enabled = true
+region_rect = Rect2(0, 0, 100000, 1878.48)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(3117, 243)
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture_repeat = 2
+position = Vector2(17749, 485)
+scale = Vector2(0.417375, 0.417375)
+texture = ExtResource("2_pstka")
+region_enabled = true
+region_rect = Rect2(0, 0, 100000, 1644.43)
