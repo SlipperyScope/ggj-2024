@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://beivyb34yafdi"]
+
+[ext_resource type="Script" path="res://Obstacles/Ground.cs" id="1_52hjv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6ynv"]
+size = Vector2(2178, 57)
+
+[sub_resource type="LabelSettings" id="LabelSettings_b38a2"]
+font_size = 45
+
+[node name="Follower" type="StaticBody2D" node_paths=PackedStringArray("shootie")]
+position = Vector2(1637, 274)
+script = ExtResource("1_52hjv")
+shootie = NodePath("")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-765, 1.5)
+shape = SubResource("RectangleShape2D_t6ynv")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -48.0
+offset_top = -1037.0
+offset_right = 50.0
+offset_bottom = -974.0
+text = "13 ft"
+label_settings = SubResource("LabelSettings_b38a2")

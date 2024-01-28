@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bii52d0ahj48f"]
 
-[ext_resource type="Script" path="res://Adam/Horner.cs" id="1_q2whw"]
+[ext_resource type="Script" path="res://Obstacles/Horner.cs" id="1_q2whw"]
 [ext_resource type="Texture2D" uid="uid://b8wjtgounutrb" path="res://Assets/horn.png" id="2_f4gji"]
 [ext_resource type="AudioStream" uid="uid://br1d8b5kyl065" path="res://Assets/Horn.mp3" id="3_psvwa"]
 

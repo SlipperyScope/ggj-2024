@@ -13,7 +13,6 @@ public partial class Horner : Area2D
 
 	private void onBodyEntered(Node2D body)
 	{
-        GD.Print("horn: " + hornPlayer);
         hornPlayer.Play();
 	}
 }

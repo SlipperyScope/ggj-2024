@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cki25ue47pcsl"]
+
+[ext_resource type="Script" path="res://Obstacles/GoFast.cs" id="1_0oo2h"]
+[ext_resource type="Texture2D" uid="uid://cim27yln2bcua" path="res://Assets/nos.png" id="2_l84k7"]
+[ext_resource type="AudioStream" uid="uid://cih1qspdxy63w" path="res://Assets/Skrrt.mp3" id="3_k3ihh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3foxp"]
+size = Vector2(112, 227)
+
+[node name="GoFast" type="Area2D"]
+collision_mask = 3
+script = ExtResource("1_0oo2h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_3foxp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.242188, 0.242188)
+texture = ExtResource("2_l84k7")
+
+[node name="SkrrtPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_k3ihh")
