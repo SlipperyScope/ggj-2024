@@ -24,7 +24,7 @@ size = Vector2(128.052, 135.713)
 position = Vector2(119, 762)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(-20, 190)
+position = Vector2(-16, 126)
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_6js6o")
 script = ExtResource("1_kesc2")
@@ -79,7 +79,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 100000, 1644.43)
 
 [node name="Booster" parent="." instance=ExtResource("6_re4wa")]
-position = Vector2(3880, -1070)
+position = Vector2(3896, -410)
 
 [node name="Horner" parent="." instance=ExtResource("8_syb7l")]
 position = Vector2(3674, -249)
@@ -88,4 +88,4 @@ position = Vector2(3674, -249)
 position = Vector2(26136, 209)
 
 [node name="GoFast" parent="." instance=ExtResource("9_etkhx")]
-position = Vector2(3928, -404)
+position = Vector2(3864, 136)
