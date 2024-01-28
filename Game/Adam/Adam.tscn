@@ -18,6 +18,7 @@ position = Vector2(119, 762)
 shootie = NodePath("../Shootie")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(30334, 188)
@@ -42,6 +43,32 @@ scale = Vector2(0.417375, 0.417375)
 texture = ExtResource("2_pstka")
 region_enabled = true
 region_rect = Rect2(0, 0, 100000, 1644.43)
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+position = Vector2(-13, -57)
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(3147.78, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+texture_repeat = 3
+scale = Vector2(0.69, 0.69)
+texture = ExtResource("1_s4gc8")
+centered = false
+region_rect = Rect2(0, 0, 100000, 1878.48)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground2"]
+position = Vector2(-13, -57)
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(4300.08, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer2"]
+texture_repeat = 3
+scale = Vector2(0.69, 0.69)
+texture = ExtResource("2_pstka")
+centered = false
+region_rect = Rect2(0, 0, 100000, 1878.48)
 
 [node name="Booster" parent="." instance=ExtResource("6_re4wa")]
 position = Vector2(3896, -410)
