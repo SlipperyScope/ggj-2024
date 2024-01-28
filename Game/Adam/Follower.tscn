@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://beivyb34yafdi"]
+[gd_scene load_steps=8 format=3 uid="uid://beivyb34yafdi"]
 
 [ext_resource type="Script" path="res://Obstacles/Ground.cs" id="1_52hjv"]
+[ext_resource type="AudioStream" uid="uid://slrrln37c5lc" path="res://Assets/ow2.wav" id="2_344lr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6ynv"]
 size = Vector2(2178, 57)
@@ -13,6 +14,9 @@ font_size = 106
 
 [sub_resource type="LabelSettings" id="LabelSettings_cbuhk"]
 font_size = 76
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecf6d"]
+size = Vector2(2182, 99)
 
 [node name="Follower" type="StaticBody2D"]
 position = Vector2(1637, 274)
@@ -48,3 +52,14 @@ offset_right = 1234.0
 offset_bottom = -426.0
 text = "Press Space to Try Again"
 label_settings = SubResource("LabelSettings_cbuhk")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_344lr")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-765, -17.5)
+shape = SubResource("RectangleShape2D_ecf6d")

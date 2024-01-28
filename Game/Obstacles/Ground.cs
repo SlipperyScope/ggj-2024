@@ -9,6 +9,8 @@ public partial class Ground : StaticBody2D
     private Label heightLabel;
     private Label distanceLabel;
     private Label restartLabel;
+    private Area2D area;
+    private AudioStreamPlayer audioPlayer;
 
     private Boolean hidingDistance = true;
 
@@ -18,6 +20,9 @@ public partial class Ground : StaticBody2D
         heightLabel = GetNode<Label>("Label");
         distanceLabel = GetNode<Label>("DistanceLabel");
         restartLabel = GetNode<Label>("RestartLabel");
+        area = GetNode<Area2D>("Area2D");
+        audioPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
+        area.BodyEntered += onBodyEntered;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -50,4 +55,9 @@ public partial class Ground : StaticBody2D
         }
 
 	}
+
+    private void onBodyEntered(Node2D body)
+    {
+        audioPlayer.Play();
+    }
 }
