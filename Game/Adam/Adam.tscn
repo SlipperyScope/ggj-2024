@@ -1,67 +1,21 @@
-[gd_scene load_steps=14 format=3 uid="uid://c8xgpruoc20da"]
+[gd_scene load_steps=9 format=3 uid="uid://c8xgpruoc20da"]
 
-[ext_resource type="Script" path="res://Andrew/RigidBody2D.cs" id="1_kesc2"]
+[ext_resource type="PackedScene" uid="uid://ctmja05wnsgy" path="res://Adam/Shootie.tscn" id="1_0f0x5"]
 [ext_resource type="Texture2D" uid="uid://baqxei4q5k1s8" path="res://Assets/Art/background/bg-layer-2.png" id="1_s4gc8"]
-[ext_resource type="Texture2D" uid="uid://b1vg8w768enlq" path="res://Assets/standin.png" id="2_b4c6a"]
 [ext_resource type="Texture2D" uid="uid://dhtbwhrf42js1" path="res://Assets/Art/background/bg-layer-1.png" id="2_pstka"]
-[ext_resource type="Script" path="res://Adam/Ground.cs" id="3_wsdh5"]
+[ext_resource type="PackedScene" uid="uid://beivyb34yafdi" path="res://Adam/Follower.tscn" id="2_rysyn"]
 [ext_resource type="PackedScene" uid="uid://b1r6tes0vc4r" path="res://Obstacles/Booster.tscn" id="6_re4wa"]
 [ext_resource type="PackedScene" uid="uid://bii52d0ahj48f" path="res://Obstacles/Horner.tscn" id="8_syb7l"]
 [ext_resource type="PackedScene" uid="uid://y2n3hmbmlwik" path="res://Obstacles/Tramp.tscn" id="9_dphwx"]
 [ext_resource type="PackedScene" uid="uid://cki25ue47pcsl" path="res://Obstacles/GoFast.tscn" id="9_etkhx"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6js6o"]
-friction = 0.79
-bounce = 1.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_3loqr"]
-radius = 62.0322
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6ynv"]
-size = Vector2(2178, 57)
-
-[sub_resource type="LabelSettings" id="LabelSettings_b38a2"]
-font_size = 45
-
 [node name="Adam" type="Node2D"]
 position = Vector2(119, 762)
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(-16, 126)
-collision_layer = 2
-physics_material_override = SubResource("PhysicsMaterial_6js6o")
-script = ExtResource("1_kesc2")
-metadata/_edit_group_ = true
+[node name="Shootie" parent="." instance=ExtResource("1_0f0x5")]
 
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-scale = Vector2(0.111285, 0.111285)
-texture = ExtResource("2_b4c6a")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-shape = SubResource("CircleShape2D_3loqr")
-
-[node name="Camera2D" type="Camera2D" parent="RigidBody2D"]
-limit_left = 0
-limit_top = 0
-limit_bottom = 0
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." node_paths=PackedStringArray("shootie")]
-position = Vector2(1637, 274)
-script = ExtResource("3_wsdh5")
-shootie = NodePath("../RigidBody2D")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-765, 1.5)
-shape = SubResource("RectangleShape2D_t6ynv")
-
-[node name="Label" type="Label" parent="StaticBody2D"]
-visible = false
-offset_left = -48.0
-offset_top = -1037.0
-offset_right = 50.0
-offset_bottom = -974.0
-text = "13 ft"
-label_settings = SubResource("LabelSettings_b38a2")
+[node name="Follower" parent="." node_paths=PackedStringArray("shootie") instance=ExtResource("2_rysyn")]
+shootie = NodePath("../Shootie")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -96,7 +50,8 @@ position = Vector2(3896, -410)
 position = Vector2(3674, -249)
 
 [node name="Tramp" parent="." instance=ExtResource("9_dphwx")]
-position = Vector2(26136, 209)
+position = Vector2(25978, 127)
+scale = Vector2(1.8, 1.8)
 
 [node name="GoFast" parent="." instance=ExtResource("9_etkhx")]
 position = Vector2(3864, 136)

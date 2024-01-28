@@ -11,6 +11,7 @@ public partial class Tramp : Area2D
 
 	private void onBodyEntered(Node2D body)
 	{
-        ((RigidBody2D)body).ApplyCentralImpulse(new Vector2(0f, -100f) * 10f);
+        GD.Print("hit tramp");
+        ((RigidBody2D)body).ApplyCentralImpulse(new Vector2(0f, -350f) * 10f);
 	}
 }

@@ -16,10 +16,12 @@ public partial class Ground : StaticBody2D
 	public override void _Process(double delta)
 	{
         Position = new Vector2(shootie.Position.X, Position.Y);
-        if (shootie.heightAbove > 0) {
+        if (shootie.heightAbove > 0)
+        {
             heightLabel.Text = shootie.heightAbove + " ft";
             heightLabel.Show();
-        } else if (heightLabel.Visible) {
+        } else if (heightLabel.Visible)
+        {
             heightLabel.Hide();
         } 
 	}

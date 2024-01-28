@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctmja05wnsgy"]
+
+[ext_resource type="Script" path="res://Andrew/RigidBody2D.cs" id="1_jb31p"]
+[ext_resource type="Texture2D" uid="uid://b1vg8w768enlq" path="res://Assets/standin.png" id="2_1wiei"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6js6o"]
+friction = 0.79
+bounce = 0.97
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3loqr"]
+radius = 62.0322
+
+[node name="Shootie" type="RigidBody2D"]
+position = Vector2(-16, 126)
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_6js6o")
+script = ExtResource("1_jb31p")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.111285, 0.111285)
+texture = ExtResource("2_1wiei")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3loqr")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_bottom = 0
