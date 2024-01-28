@@ -37,47 +37,45 @@ offset_right = 2002.0
 offset_bottom = 2010.0
 scale = Vector2(0.5, 0.5)
 
-[node name="VSplitContainer" type="HFlowContainer" parent="CanvasLayer/Control/HSplitContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/HSplitContainer"]
+custom_minimum_size = Vector2(475, 0)
+layout_mode = 2
+
+[node name="VSplitContainer" type="HFlowContainer" parent="CanvasLayer/Control/HSplitContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Control/HSplitContainer/VSplitContainer"]
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Control/HSplitContainer/MarginContainer/VSplitContainer"]
 layout_mode = 2
 toggle_mode = true
+button_pressed = true
 texture_normal = ExtResource("2_nqjdm")
 texture_pressed = ExtResource("3_gq0pc")
 stretch_mode = 4
 
-[node name="TextureButton2" type="TextureButton" parent="CanvasLayer/Control/HSplitContainer/VSplitContainer"]
+[node name="TextureButton2" type="TextureButton" parent="CanvasLayer/Control/HSplitContainer/MarginContainer/VSplitContainer"]
 layout_mode = 2
 toggle_mode = true
 texture_normal = ExtResource("4_h4ghy")
 texture_pressed = ExtResource("5_sl4uy")
 
-[node name="TextureButton3" type="TextureButton" parent="CanvasLayer/Control/HSplitContainer/VSplitContainer"]
+[node name="TextureButton3" type="TextureButton" parent="CanvasLayer/Control/HSplitContainer/MarginContainer/VSplitContainer"]
 layout_mode = 2
 toggle_mode = true
 texture_normal = ExtResource("6_5qijf")
 texture_pressed = ExtResource("7_fk2a8")
 
-[node name="HeadPanel" type="Panel" parent="CanvasLayer/Control/HSplitContainer"]
+[node name="HeadPanel" type="ScrollContainer" parent="CanvasLayer/Control/HSplitContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="HFlowContainer" type="VBoxContainer" parent="CanvasLayer/Control/HSplitContainer/HeadPanel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.997
-anchor_bottom = 1.0
-offset_left = 35.0
-offset_top = 36.0
-offset_right = -29.233
-offset_bottom = -30.0
+layout_mode = 2
 
 [node name="VFlowContainer" type="VFlowContainer" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer"]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 4
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer/VFlowContainer"]
 layout_mode = 2
@@ -123,6 +121,22 @@ Label = "Left Size"
 layout_mode = 2
 Label = "Right Size"
 
+[node name="Slider20" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer" instance=ExtResource("11_sbkc4")]
+layout_mode = 2
+Label = "Left Rotate"
+
+[node name="Slider21" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer" instance=ExtResource("11_sbkc4")]
+layout_mode = 2
+Label = "Right Rotate"
+
+[node name="Slider18" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer" instance=ExtResource("11_sbkc4")]
+layout_mode = 2
+Label = "Gap"
+
+[node name="Slider19" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer" instance=ExtResource("11_sbkc4")]
+layout_mode = 2
+Label = "Drift"
+
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
@@ -140,3 +154,85 @@ autowrap_mode = 0
 
 [node name="Slider3" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer" instance=ExtResource("11_sbkc4")]
 layout_mode = 2
+Label = "Position"
+
+[node name="Slider4" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer" instance=ExtResource("11_sbkc4")]
+layout_mode = 2
+Label = "Width"
+
+[node name="Slider5" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer" instance=ExtResource("11_sbkc4")]
+layout_mode = 2
+Label = "Height"
+
+[node name="Slider6" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer" instance=ExtResource("11_sbkc4")]
+layout_mode = 2
+Label = "Rotate"
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer/MarginContainer3"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/default_color = Color(0.752941, 0.231373, 0.611765, 1)
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "[b]Chinny-chin chin[/b]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Slider8" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer" instance=ExtResource("11_sbkc4")]
+layout_mode = 2
+Label = "Stretch"
+
+[node name="Slider9" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer" instance=ExtResource("11_sbkc4")]
+layout_mode = 2
+Label = "Width"
+
+[node name="Slider10" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer" instance=ExtResource("11_sbkc4")]
+layout_mode = 2
+Label = "Elasticity"
+
+[node name="MarginContainer4" type="MarginContainer" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer/MarginContainer4"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/default_color = Color(0.752941, 0.231373, 0.611765, 1)
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "[b]Base[/b]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Slider13" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer" instance=ExtResource("11_sbkc4")]
+layout_mode = 2
+Label = "Height"
+
+[node name="Slider14" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer" instance=ExtResource("11_sbkc4")]
+layout_mode = 2
+Label = "Width"
+
+[node name="MarginContainer5" type="MarginContainer" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer/MarginContainer5"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/default_color = Color(0.752941, 0.231373, 0.611765, 1)
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "[b]Ornament[/b]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Slider15" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer" instance=ExtResource("11_sbkc4")]
+layout_mode = 2
+Label = "[Dynamic]"
