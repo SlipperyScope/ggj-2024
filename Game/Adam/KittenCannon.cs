@@ -26,12 +26,21 @@ public partial class KittenCannon : Node2D
         if (Input.IsActionPressed("DownBuddon") && armSprite.RotationDegrees < -8)
         {
             armSprite.RotationDegrees += (float)(5 * delta);
+            GD.Print(armSprite.RotationDegrees);
         }
 
-        if (!hasShot && Input.IsActionPressed("Space"))
+        if (Input.IsActionJustPressed("Space"))
         {
-            hasShot = true;
-            ShootYourShot();
+            if (!hasShot)
+            {
+                hasShot = true;
+                ShootYourShot();
+            }
+            else if (shootie.stopped)
+            {
+                shootie.ResetPos();
+                hasShot = false;
+            }
         }
 	}
 
