@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c8xgpruoc20da"]
+[gd_scene load_steps=14 format=3 uid="uid://c8xgpruoc20da"]
 
 [ext_resource type="Script" path="res://Andrew/RigidBody2D.cs" id="1_kesc2"]
 [ext_resource type="Texture2D" uid="uid://baqxei4q5k1s8" path="res://Assets/Art/background/bg-layer-2.png" id="1_s4gc8"]
@@ -18,7 +18,10 @@ bounce = 1.0
 radius = 62.0322
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6ynv"]
-size = Vector2(128.052, 135.713)
+size = Vector2(2178, 57)
+
+[sub_resource type="LabelSettings" id="LabelSettings_b38a2"]
+font_size = 45
 
 [node name="Adam" type="Node2D"]
 position = Vector2(119, 762)
@@ -44,13 +47,21 @@ limit_bottom = 0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." node_paths=PackedStringArray("shootie")]
 position = Vector2(1637, 274)
-scale = Vector2(29.16, 0.280002)
 script = ExtResource("3_wsdh5")
 shootie = NodePath("../RigidBody2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0.274351, 3.57129)
+position = Vector2(-765, 1.5)
 shape = SubResource("RectangleShape2D_t6ynv")
+
+[node name="Label" type="Label" parent="StaticBody2D"]
+visible = false
+offset_left = -48.0
+offset_top = -1037.0
+offset_right = 50.0
+offset_bottom = -974.0
+text = "13 ft"
+label_settings = SubResource("LabelSettings_b38a2")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
