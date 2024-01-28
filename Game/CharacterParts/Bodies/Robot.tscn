@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://kumi7x8gfql0"]
+
+[ext_resource type="Texture2D" uid="uid://cqv8ccaaqw4av" path="res://Assets/Art/character/bodies/robot/robot-body-arm-right.png" id="1_t1lnr"]
+[ext_resource type="Texture2D" uid="uid://dk7j0u3dh34cw" path="res://Assets/Art/character/bodies/robot/robot-body-hand-right.png" id="2_jgdit"]
+[ext_resource type="Texture2D" uid="uid://endvam7dbuk4" path="res://Assets/Art/character/bodies/robot/robot-body-base.png" id="3_yfafc"]
+[ext_resource type="Texture2D" uid="uid://cokth3xt5ncd2" path="res://Assets/Art/character/bodies/robot/robot-body-arm-left.png" id="4_h606t"]
+[ext_resource type="Texture2D" uid="uid://j0yikl4wxbxx" path="res://Assets/Art/character/bodies/robot/robot-body-hand-left.png" id="5_51wpf"]
+[ext_resource type="Texture2D" uid="uid://53psarl7ajf3" path="res://Assets/Art/character/bodies/robot/robot-body-ornament.png" id="6_67kte"]
+
+[node name="Robot" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+
+[node name="ArmRight" type="Sprite2D" parent="."]
+position = Vector2(170, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_t1lnr")
+
+[node name="HandRight" type="Sprite2D" parent="."]
+position = Vector2(248, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_jgdit")
+
+[node name="Base" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_yfafc")
+
+[node name="ArmLeft" type="Sprite2D" parent="."]
+position = Vector2(-158, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_h606t")
+
+[node name="HandLeft" type="Sprite2D" parent="."]
+position = Vector2(-236, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_51wpf")
+
+[node name="Ornament" type="Sprite2D" parent="."]
+position = Vector2(0, 96)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_67kte")

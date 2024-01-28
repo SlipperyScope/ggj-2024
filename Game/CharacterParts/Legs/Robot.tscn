@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://blhg7ihye5oex"]
+
+[ext_resource type="Texture2D" uid="uid://cc2f10yhvvd70" path="res://Assets/Art/character/legs/robot/robot-legs-base.png" id="1_yid3r"]
+[ext_resource type="Texture2D" uid="uid://ced6dsuirfxji" path="res://Assets/Art/character/legs/robot/robot-legs-ornament.png" id="2_hbogx"]
+
+[node name="Robot" type="Node2D"]
+
+[node name="Base" type="Sprite2D" parent="."]
+position = Vector2(0, 72)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_yid3r")
+
+[node name="Ornament" type="Sprite2D" parent="."]
+position = Vector2(0, 132)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_hbogx")

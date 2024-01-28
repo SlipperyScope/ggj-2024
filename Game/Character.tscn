@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu8p65gvhd6bc"]
+
+[ext_resource type="PackedScene" uid="uid://ci7unvb5j335k" path="res://CharacterParts/Heads/Robot.tscn" id="1_5tm4p"]
+[ext_resource type="PackedScene" uid="uid://blhg7ihye5oex" path="res://CharacterParts/Legs/Robot.tscn" id="2_8mwro"]
+[ext_resource type="PackedScene" uid="uid://kumi7x8gfql0" path="res://CharacterParts/Bodies/Robot.tscn" id="3_d838m"]
+
+[node name="Character" type="Node2D"]
+
+[node name="Legs" parent="." instance=ExtResource("2_8mwro")]
+position = Vector2(0, 76)
+
+[node name="Body" parent="." instance=ExtResource("3_d838m")]
+scale = Vector2(1, 1)
+
+[node name="Head" parent="." instance=ExtResource("1_5tm4p")]
+position = Vector2(0, -159)
