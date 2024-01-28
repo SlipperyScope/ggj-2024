@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c8xgpruoc20da"]
+[gd_scene load_steps=13 format=3 uid="uid://c8xgpruoc20da"]
 
 [ext_resource type="Script" path="res://Andrew/RigidBody2D.cs" id="1_kesc2"]
 [ext_resource type="Texture2D" uid="uid://baqxei4q5k1s8" path="res://Assets/Art/background/bg-layer-2.png" id="1_s4gc8"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b1r6tes0vc4r" path="res://Obstacles/Booster.tscn" id="6_re4wa"]
 [ext_resource type="PackedScene" uid="uid://bii52d0ahj48f" path="res://Obstacles/Horner.tscn" id="8_syb7l"]
 [ext_resource type="PackedScene" uid="uid://y2n3hmbmlwik" path="res://Obstacles/Tramp.tscn" id="9_dphwx"]
+[ext_resource type="PackedScene" uid="uid://cki25ue47pcsl" path="res://Obstacles/GoFast.tscn" id="9_etkhx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6js6o"]
 friction = 0.79
@@ -78,10 +79,13 @@ region_enabled = true
 region_rect = Rect2(0, 0, 100000, 1644.43)
 
 [node name="Booster" parent="." instance=ExtResource("6_re4wa")]
-position = Vector2(3972, -418)
+position = Vector2(3880, -1070)
 
 [node name="Horner" parent="." instance=ExtResource("8_syb7l")]
 position = Vector2(3674, -249)
 
 [node name="Tramp" parent="." instance=ExtResource("9_dphwx")]
 position = Vector2(26136, 209)
+
+[node name="GoFast" parent="." instance=ExtResource("9_etkhx")]
+position = Vector2(3928, -404)
