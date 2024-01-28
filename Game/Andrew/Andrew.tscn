@@ -1,8 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://cp1gqewrevyy"]
 
-[ext_resource type="Script" path="res://Andrew/RigidBody2D.cs" id="1_3q5c5"]
+[ext_resource type="Script" path="res://Andrew/A_RigidBody2D.cs" id="1_3q5c5"]
 [ext_resource type="Texture2D" uid="uid://cc8b0fln6no2j" path="res://icon.svg" id="1_xrr73"]
-[ext_resource type="Script" path="res://Andrew/Area2D.cs" id="3_dxwmx"]
+[ext_resource type="Script" path="res://Andrew/A_RigidBody2D.cs" id="3_dxwmx"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6w5sm"]
 size = Vector2(122, 112)
