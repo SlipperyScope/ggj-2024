@@ -3,8 +3,9 @@ using System;
 
 public partial class Ground : StaticBody2D
 {
+
     [Export]
-    public RigidBody2D shootie;
+    public A_RigidBody2D shootie;
     private Label heightLabel;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()

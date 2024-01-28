@@ -1,0 +1,103 @@
+[gd_scene load_steps=16 format=3 uid="uid://bpyxthgq4822j"]
+
+[ext_resource type="Texture2D" uid="uid://cqv8ccaaqw4av" path="res://Assets/Art/character/bodies/robot/robot-body-arm-right.png" id="1_bk0fl"]
+[ext_resource type="Texture2D" uid="uid://dk7j0u3dh34cw" path="res://Assets/Art/character/bodies/robot/robot-body-hand-right.png" id="2_7kabj"]
+[ext_resource type="Texture2D" uid="uid://endvam7dbuk4" path="res://Assets/Art/character/bodies/robot/robot-body-base.png" id="3_7tler"]
+[ext_resource type="Texture2D" uid="uid://cokth3xt5ncd2" path="res://Assets/Art/character/bodies/robot/robot-body-arm-left.png" id="4_jgkd5"]
+[ext_resource type="Texture2D" uid="uid://j0yikl4wxbxx" path="res://Assets/Art/character/bodies/robot/robot-body-hand-left.png" id="5_abl8n"]
+[ext_resource type="Texture2D" uid="uid://53psarl7ajf3" path="res://Assets/Art/character/bodies/robot/robot-body-ornament.png" id="6_u0r7e"]
+[ext_resource type="Texture2D" uid="uid://l1hoxwds0gra" path="res://Assets/Art/character/heads/robot/robot-head-ornament.png" id="7_p0k0t"]
+[ext_resource type="Texture2D" uid="uid://cgksf3kfpx6a1" path="res://Assets/Art/character/heads/robot/robot-head-base.png" id="8_lphih"]
+[ext_resource type="Texture2D" uid="uid://df0wtgsjirlyp" path="res://Assets/Art/character/heads/robot/robot-head-eye-left.png" id="9_h8s5p"]
+[ext_resource type="Texture2D" uid="uid://bbpxpx3nag2nq" path="res://Assets/Art/character/heads/robot/robot-head-eye-right.png" id="10_sckan"]
+[ext_resource type="Texture2D" uid="uid://gxg82ygwfeys" path="res://Assets/Art/character/heads/robot/robot-head-chin-end.png" id="11_i0igj"]
+[ext_resource type="Texture2D" uid="uid://buray2je86ytg" path="res://Assets/Art/character/heads/robot/robot-head-chin-base.png" id="12_uiggu"]
+[ext_resource type="Texture2D" uid="uid://be8pv3ldf3k7b" path="res://Assets/Art/character/heads/robot/robot-head-mouth.png" id="13_eeycu"]
+[ext_resource type="Texture2D" uid="uid://cc2f10yhvvd70" path="res://Assets/Art/character/legs/robot/robot-legs-base.png" id="14_21fge"]
+[ext_resource type="Texture2D" uid="uid://ced6dsuirfxji" path="res://Assets/Art/character/legs/robot/robot-legs-ornament.png" id="15_g7ton"]
+
+[node name="RobotTemplate" type="Node2D"]
+
+[node name="Body" type="Node2D" parent="."]
+
+[node name="ArmRight" type="Sprite2D" parent="Body"]
+position = Vector2(170, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_bk0fl")
+
+[node name="HandRight" type="Sprite2D" parent="Body"]
+position = Vector2(248, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_7kabj")
+
+[node name="Base" type="Sprite2D" parent="Body"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_7tler")
+
+[node name="ArmLeft" type="Sprite2D" parent="Body"]
+position = Vector2(-158, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_jgkd5")
+
+[node name="HandLeft" type="Sprite2D" parent="Body"]
+position = Vector2(-236, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_abl8n")
+
+[node name="Ornament" type="Sprite2D" parent="Body"]
+position = Vector2(0, 96)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_u0r7e")
+
+[node name="Head" type="Node2D" parent="."]
+position = Vector2(0, -189)
+
+[node name="Ornament" type="Sprite2D" parent="Head"]
+position = Vector2(65, -130)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_p0k0t")
+
+[node name="Base" type="Sprite2D" parent="Head"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_lphih")
+
+[node name="EyeLeft" type="Sprite2D" parent="Head"]
+position = Vector2(-43, -34)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_h8s5p")
+
+[node name="EyeRight" type="Sprite2D" parent="Head"]
+position = Vector2(49, -43)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_sckan")
+
+[node name="Chin" type="Node2D" parent="Head"]
+position = Vector2(0, 78)
+
+[node name="End" type="Sprite2D" parent="Head/Chin"]
+position = Vector2(0, 114)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_i0igj")
+
+[node name="Base" type="Sprite2D" parent="Head/Chin"]
+position = Vector2(0, 49)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_uiggu")
+
+[node name="Mouth" type="Sprite2D" parent="Head"]
+position = Vector2(-1, 53)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_eeycu")
+
+[node name="Legs" type="Node2D" parent="."]
+position = Vector2(0, 106)
+
+[node name="Base" type="Sprite2D" parent="Legs"]
+position = Vector2(0, 72)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_21fge")
+
+[node name="Ornament" type="Sprite2D" parent="Legs"]
+position = Vector2(0, 132)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_g7ton")

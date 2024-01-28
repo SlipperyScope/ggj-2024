@@ -1,117 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://crmipqg2f6dtg"]
+[gd_scene load_steps=5 format=3 uid="uid://crmipqg2f6dtg"]
 
 [ext_resource type="Script" path="res://CharacterParts/Physicalation/Puppet.cs" id="1_5yx3f"]
-[ext_resource type="Script" path="res://CharacterParts/Physicalation/PhysicsSprite2D.cs" id="2_j1a08"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_3ny7o"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_mepn1"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_8y0sr"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_rke86"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_flfjk"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_0o6xx"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_up5p8"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_2o3w4"]
+[ext_resource type="PackedScene" uid="uid://b1sspaop0438e" path="res://CharacterParts/Physicalation/Bodies/RobotBody.tscn" id="2_u8l77"]
+[ext_resource type="PackedScene" uid="uid://crtk47mkgmo2n" path="res://CharacterParts/Physicalation/Legs/RobotLegs.tscn" id="3_tw435"]
+[ext_resource type="PackedScene" uid="uid://crmu8w0j01wab" path="res://CharacterParts/Physicalation/Heads/RobotHead.tscn" id="4_fp72l"]
 
 [node name="Puppet" type="Node2D"]
 script = ExtResource("1_5yx3f")
 
-[node name="Core" type="Node2D" parent="."]
+[node name="Body" parent="." instance=ExtResource("2_u8l77")]
 
-[node name="Head" type="RigidBody2D" parent="Core"]
-script = ExtResource("2_j1a08")
-TextureScale = Vector2(1, 1)
+[node name="Legs" parent="." instance=ExtResource("3_tw435")]
 
-[node name="PinJoint" type="PinJoint2D" parent="Core/Head"]
-node_a = NodePath("..")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Core/Head"]
-shape = SubResource("CircleShape2D_3ny7o")
-
-[node name="Chest" type="RigidBody2D" parent="Core"]
-script = ExtResource("2_j1a08")
-TextureScale = Vector2(1, 1)
-
-[node name="PinJoint" type="PinJoint2D" parent="Core/Chest"]
-node_a = NodePath("/root/@EditorNode@17164/@Panel@13/@VBoxContainer@14/@HSplitContainer@17/@HSplitContainer@25/@HSplitContainer@33/@VBoxContainer@34/@VSplitContainer@36/@VSplitContainer@62/@VBoxContainer@63/@PanelContainer@110/MainScreen/@CanvasItemEditor@9462/@VSplitContainer@9281/@HSplitContainer@9283/@HSplitContainer@9285/@Control@9286/@SubViewportContainer@9287/@SubViewport@9288/Puppet/Core/Chest")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Core/Chest"]
-shape = SubResource("CircleShape2D_mepn1")
-
-[node name="Arms" type="Node2D" parent="."]
-
-[node name="LeftArm" type="Node2D" parent="Arms"]
-
-[node name="Shoulder" type="RigidBody2D" parent="Arms/LeftArm"]
-script = ExtResource("2_j1a08")
-TextureScale = Vector2(1, 1)
-
-[node name="PinJoint" type="PinJoint2D" parent="Arms/LeftArm/Shoulder"]
-node_a = NodePath("..")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Arms/LeftArm/Shoulder"]
-shape = SubResource("CircleShape2D_8y0sr")
-
-[node name="Forearm" type="RigidBody2D" parent="Arms/LeftArm"]
-script = ExtResource("2_j1a08")
-TextureScale = Vector2(1, 1)
-
-[node name="PinJoint" type="PinJoint2D" parent="Arms/LeftArm/Forearm"]
-node_a = NodePath("..")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Arms/LeftArm/Forearm"]
-shape = SubResource("CircleShape2D_rke86")
-
-[node name="Hand" type="RigidBody2D" parent="Arms/LeftArm"]
-script = ExtResource("2_j1a08")
-TextureScale = Vector2(1, 1)
-
-[node name="PinJoint" type="PinJoint2D" parent="Arms/LeftArm/Hand"]
-node_a = NodePath("..")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Arms/LeftArm/Hand"]
-shape = SubResource("CircleShape2D_flfjk")
-
-[node name="RightArm" type="Node2D" parent="Arms"]
-
-[node name="Shoulder" type="RigidBody2D" parent="Arms/RightArm"]
-script = ExtResource("2_j1a08")
-TextureScale = Vector2(1, 1)
-
-[node name="PinJoint" type="PinJoint2D" parent="Arms/RightArm/Shoulder"]
-node_a = NodePath("..")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Arms/RightArm/Shoulder"]
-shape = SubResource("CircleShape2D_0o6xx")
-
-[node name="Forearm" type="RigidBody2D" parent="Arms/RightArm"]
-script = ExtResource("2_j1a08")
-TextureScale = Vector2(1, 1)
-
-[node name="PinJoint" type="PinJoint2D" parent="Arms/RightArm/Forearm"]
-node_a = NodePath("..")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Arms/RightArm/Forearm"]
-shape = SubResource("CircleShape2D_up5p8")
-
-[node name="Hand" type="RigidBody2D" parent="Arms/RightArm"]
-script = ExtResource("2_j1a08")
-TextureScale = Vector2(1, 1)
-
-[node name="PinJoint" type="PinJoint2D" parent="Arms/RightArm/Hand"]
-node_a = NodePath("..")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Arms/RightArm/Hand"]
-shape = SubResource("CircleShape2D_2o3w4")
-
-[node name="Legs" type="Node2D" parent="."]
-
-[node name="LeftLeg" type="Node2D" parent="Legs"]
-
-[node name="RightLeg" type="Node2D" parent="Legs"]
+[node name="Head" parent="." instance=ExtResource("4_fp72l")]

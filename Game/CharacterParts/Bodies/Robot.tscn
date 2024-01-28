@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://53psarl7ajf3" path="res://Assets/Art/character/bodies/robot/robot-body-ornament.png" id="6_67kte"]
 
 [node name="Robot" type="Node2D"]
-scale = Vector2(0.5, 0.5)
 
 [node name="ArmRight" type="Sprite2D" parent="."]
 position = Vector2(170, 0)

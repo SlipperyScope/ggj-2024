@@ -1,0 +1,151 @@
+[gd_scene load_steps=12 format=3 uid="uid://dsx7ecdngid46"]
+
+[ext_resource type="Texture2D" uid="uid://baqxei4q5k1s8" path="res://Assets/Art/background/bg-layer-2.png" id="1_tmlrb"]
+[ext_resource type="Texture2D" uid="uid://m2tivgo0606" path="res://Assets/Art/background/cactus-1.png" id="2_lpx8o"]
+[ext_resource type="PackedScene" uid="uid://crmipqg2f6dtg" path="res://CharacterParts/Physicalation/Puppet.tscn" id="3_bm23l"]
+[ext_resource type="PackedScene" uid="uid://crmu8w0j01wab" path="res://CharacterParts/Physicalation/Heads/RobotHead.tscn" id="4_tlpdc"]
+[ext_resource type="PackedScene" uid="uid://cxo2wfpta711l" path="res://CharacterParts/Physicalation/Heads/HeathHead.tscn" id="5_8expv"]
+[ext_resource type="Texture2D" uid="uid://53psarl7ajf3" path="res://Assets/Art/character/bodies/robot/robot-body-ornament.png" id="6_jelec"]
+[ext_resource type="Texture2D" uid="uid://dqm8wlr0ck2fc" path="res://Assets/heaf/h_eye_left.png" id="7_ort8v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dq2xp"]
+size = Vector2(2012, 166)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gps5n"]
+size = Vector2(2004, 264)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_asduo"]
+size = Vector2(286, 1196)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fnv2v"]
+size = Vector2(256, 1366)
+
+[node name="PuppetTeat" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(975, 604)
+scale = Vector2(0.391057, 0.669897)
+texture = ExtResource("1_tmlrb")
+
+[node name="Walls" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Top" type="StaticBody2D" parent="Walls"]
+position = Vector2(1046, -27)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/Top"]
+rotation = 1.5708
+scale = Vector2(1, 2.09)
+texture = ExtResource("2_lpx8o")
+offset = Vector2(0, -50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Top"]
+shape = SubResource("RectangleShape2D_dq2xp")
+
+[node name="Bottom" type="StaticBody2D" parent="Walls"]
+position = Vector2(1057, 1135)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/Bottom"]
+rotation = 1.5708
+scale = Vector2(1, 2.025)
+texture = ExtResource("2_lpx8o")
+offset = Vector2(0, -50)
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Bottom"]
+shape = SubResource("RectangleShape2D_gps5n")
+
+[node name="Left" type="StaticBody2D" parent="Walls"]
+position = Vector2(-51, 548)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/Left"]
+position = Vector2(7, -64)
+scale = Vector2(1, 1.105)
+texture = ExtResource("2_lpx8o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left"]
+shape = SubResource("RectangleShape2D_asduo")
+
+[node name="Right" type="StaticBody2D" parent="Walls"]
+position = Vector2(1948, 503)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/Right"]
+scale = Vector2(1, 1.115)
+texture = ExtResource("2_lpx8o")
+offset = Vector2(0, -50)
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right"]
+shape = SubResource("RectangleShape2D_fnv2v")
+
+[node name="Puppet" parent="." node_paths=PackedStringArray("EyeHeight", "EyeRotation", "HeadSelection") instance=ExtResource("3_bm23l")]
+position = Vector2(521, 569)
+EyeHeight = NodePath("../Controls/EyeHeight/EyeHeightSlider")
+EyeRotation = NodePath("../Controls/EyeRotation/EyeHeightSlider")
+HeadSelection = NodePath("../Controls/HeadSelect/OptionButton")
+Heads = Array[PackedScene]([ExtResource("4_tlpdc"), ExtResource("5_8expv")])
+
+[node name="Controls" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Controls"]
+offset_left = 891.0
+offset_top = 275.0
+offset_right = 1265.0
+offset_bottom = 621.0
+color = Color(0, 0, 0, 1)
+
+[node name="EyeHeight" type="Node2D" parent="Controls"]
+
+[node name="Label" type="Label" parent="Controls/EyeHeight"]
+offset_left = 908.0
+offset_top = 293.0
+offset_right = 1052.0
+offset_bottom = 332.0
+theme_type_variation = &"HeaderLarge"
+text = "Eye Height"
+
+[node name="EyeHeightSlider" type="HSlider" parent="Controls/EyeHeight"]
+offset_left = 994.0
+offset_top = 343.0
+offset_right = 1161.0
+offset_bottom = 388.0
+rotation = 1.5708
+value = 50.0
+
+[node name="EyeRotation" type="Node2D" parent="Controls"]
+
+[node name="Label" type="Label" parent="Controls/EyeRotation"]
+offset_left = 1079.0
+offset_top = 292.0
+offset_right = 1249.0
+offset_bottom = 331.0
+theme_type_variation = &"HeaderLarge"
+text = "Eye Rotation"
+
+[node name="EyeHeightSlider" type="HSlider" parent="Controls/EyeRotation"]
+offset_left = 1181.0
+offset_top = 339.0
+offset_right = 1348.0
+offset_bottom = 384.0
+rotation = 1.5708
+value = 50.0
+
+[node name="HeadSelect" type="Node2D" parent="Controls"]
+
+[node name="OptionButton" type="OptionButton" parent="Controls/HeadSelect"]
+offset_left = 922.0
+offset_top = 532.0
+offset_right = 1240.0
+offset_bottom = 607.0
+item_count = 2
+fit_to_longest_item = false
+popup/item_0/text = "Robot"
+popup/item_0/icon = ExtResource("6_jelec")
+popup/item_0/id = 0
+popup/item_1/text = "???"
+popup/item_1/icon = ExtResource("7_ort8v")
+popup/item_1/id = 1

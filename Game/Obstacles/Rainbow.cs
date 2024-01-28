@@ -11,6 +11,6 @@ public partial class Rainbow : Area2D
 
 	private void onBodyEntered(Node2D body)
 	{
-        ((RigidBody2D)body).ApplyCentralImpulse(new Vector2(500f, -100f) * 10f);
+        ((A_RigidBody2D)body).ApplyCentralImpulse(new Vector2(500f, -100f) * 10f);
 	}
 }

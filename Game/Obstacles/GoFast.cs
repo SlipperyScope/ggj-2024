@@ -14,6 +14,6 @@ public partial class GoFast : Area2D
 	private void onBodyEntered(Node2D body)
 	{
         skrrtPlayer.Play();
-        ((RigidBody2D)body).ApplyCentralImpulse(new Vector2(500f, 0f) * 10f);
+        ((A_RigidBody2D)body).ApplyCentralImpulse(new Vector2(500f, 0f) * 10f);
 	}
 }

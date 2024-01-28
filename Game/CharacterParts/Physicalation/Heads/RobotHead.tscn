@@ -1,0 +1,62 @@
+[gd_scene load_steps=11 format=3 uid="uid://crmu8w0j01wab"]
+
+[ext_resource type="Script" path="res://CharacterParts/Physicalation/Articulable.cs" id="1_n15sq"]
+[ext_resource type="Script" path="res://CharacterParts/Physicalation/Heads/PuppetHead.cs" id="1_w5fjq"]
+[ext_resource type="Texture2D" uid="uid://cgksf3kfpx6a1" path="res://Assets/Art/character/heads/robot/robot-head-base.png" id="2_10462"]
+[ext_resource type="Texture2D" uid="uid://bbpxpx3nag2nq" path="res://Assets/Art/character/heads/robot/robot-head-eye-right.png" id="3_wntd0"]
+[ext_resource type="Texture2D" uid="uid://df0wtgsjirlyp" path="res://Assets/Art/character/heads/robot/robot-head-eye-left.png" id="4_glp3e"]
+[ext_resource type="Texture2D" uid="uid://gxg82ygwfeys" path="res://Assets/Art/character/heads/robot/robot-head-chin-end.png" id="5_mbl05"]
+[ext_resource type="Texture2D" uid="uid://buray2je86ytg" path="res://Assets/Art/character/heads/robot/robot-head-chin-base.png" id="6_i83vh"]
+[ext_resource type="Texture2D" uid="uid://be8pv3ldf3k7b" path="res://Assets/Art/character/heads/robot/robot-head-mouth.png" id="7_vywrk"]
+[ext_resource type="Texture2D" uid="uid://l1hoxwds0gra" path="res://Assets/Art/character/heads/robot/robot-head-ornament.png" id="8_6ukl1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dp3pj"]
+size = Vector2(182, 162)
+
+[node name="Head" type="Node2D"]
+script = ExtResource("1_w5fjq")
+
+[node name="Head" type="RigidBody2D" parent="."]
+position = Vector2(-1, -189)
+script = ExtResource("1_n15sq")
+
+[node name="Base" type="Sprite2D" parent="Head"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_10462")
+
+[node name="Eyes" type="Node2D" parent="Head"]
+
+[node name="RightEye" type="Sprite2D" parent="Head/Eyes"]
+position = Vector2(52, -47)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_wntd0")
+
+[node name="LeftEye" type="Sprite2D" parent="Head/Eyes"]
+position = Vector2(-46, -39)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_glp3e")
+
+[node name="Chin" type="Node2D" parent="Head"]
+
+[node name="ChinEnd" type="Sprite2D" parent="Head/Chin"]
+position = Vector2(0, 191)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_mbl05")
+
+[node name="ChinBase" type="Sprite2D" parent="Head/Chin"]
+position = Vector2(0, 124)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_i83vh")
+
+[node name="Mouth" type="Sprite2D" parent="Head"]
+position = Vector2(-1, 52)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_vywrk")
+
+[node name="Ornament" type="Sprite2D" parent="Head"]
+position = Vector2(75, -130)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_6ukl1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Head"]
+shape = SubResource("RectangleShape2D_dp3pj")

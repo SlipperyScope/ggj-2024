@@ -1,0 +1,95 @@
+[gd_scene load_steps=13 format=3 uid="uid://b1sspaop0438e"]
+
+[ext_resource type="Script" path="res://CharacterParts/Physicalation/Articulable.cs" id="1_irvu8"]
+[ext_resource type="Texture2D" uid="uid://endvam7dbuk4" path="res://Assets/Art/character/bodies/robot/robot-body-base.png" id="2_7rtuq"]
+[ext_resource type="Texture2D" uid="uid://53psarl7ajf3" path="res://Assets/Art/character/bodies/robot/robot-body-ornament.png" id="3_nwxfp"]
+[ext_resource type="Texture2D" uid="uid://cokth3xt5ncd2" path="res://Assets/Art/character/bodies/robot/robot-body-arm-left.png" id="4_jp334"]
+[ext_resource type="Texture2D" uid="uid://j0yikl4wxbxx" path="res://Assets/Art/character/bodies/robot/robot-body-hand-left.png" id="5_ivm60"]
+[ext_resource type="Texture2D" uid="uid://cqv8ccaaqw4av" path="res://Assets/Art/character/bodies/robot/robot-body-arm-right.png" id="6_lc20k"]
+[ext_resource type="Texture2D" uid="uid://dk7j0u3dh34cw" path="res://Assets/Art/character/bodies/robot/robot-body-hand-right.png" id="7_vxwyk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e2q1g"]
+radius = 96.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_poiyv"]
+radius = 22.0
+height = 88.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6qcp5"]
+radius = 26.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ltxb"]
+radius = 22.0
+height = 84.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lej1o"]
+radius = 26.4764
+
+[node name="Body" type="Node2D"]
+
+[node name="Torso" type="RigidBody2D" parent="."]
+script = ExtResource("1_irvu8")
+
+[node name="Base" type="Sprite2D" parent="Torso"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_7rtuq")
+
+[node name="Ornament" type="Sprite2D" parent="Torso"]
+position = Vector2(-2, 73)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_nwxfp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Torso"]
+shape = SubResource("CircleShape2D_e2q1g")
+
+[node name="Arms" type="Node2D" parent="."]
+
+[node name="LeftArm" type="Node2D" parent="Arms"]
+
+[node name="LeftArm" type="RigidBody2D" parent="Arms/LeftArm"]
+position = Vector2(-170, 1)
+script = ExtResource("1_irvu8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Arms/LeftArm/LeftArm"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_jp334")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arms/LeftArm/LeftArm"]
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_poiyv")
+
+[node name="LeftHand" type="RigidBody2D" parent="Arms/LeftArm"]
+position = Vector2(-256, 1)
+script = ExtResource("1_irvu8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Arms/LeftArm/LeftHand"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_ivm60")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arms/LeftArm/LeftHand"]
+shape = SubResource("CircleShape2D_6qcp5")
+
+[node name="RightArm" type="Node2D" parent="Arms"]
+
+[node name="RightArm" type="RigidBody2D" parent="Arms/RightArm"]
+position = Vector2(166, 2)
+script = ExtResource("1_irvu8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Arms/RightArm/RightArm"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_lc20k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arms/RightArm/RightArm"]
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_2ltxb")
+
+[node name="RightHand" type="RigidBody2D" parent="Arms/RightArm"]
+position = Vector2(248, 2)
+script = ExtResource("1_irvu8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Arms/RightArm/RightHand"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_vxwyk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arms/RightArm/RightHand"]
+shape = SubResource("CircleShape2D_lej1o")

@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class RigidBody2D : Godot.RigidBody2D
+public partial class A_RigidBody2D : Godot.RigidBody2D
 {
     public int heightAbove = 0;
     // Called when the node enters the scene tree for the first time.
