@@ -12,6 +12,7 @@ public partial class Stopper : Area2D
 	private void onBodyEntered(Node2D body)
 	{
         ((RigidBody2D)body).LinearVelocity = new Vector2(0f, 0f);
-        // ((RigidBody2D)body).ApplyCentralImpulse(new Vector2(500f, -100f) * 10f);
+        ((RigidBody2D)body).PhysicsMaterialOverride.Bounce = 0.1f;
+        ((RigidBody2D)body).PhysicsMaterialOverride.Friction = 0.99f;
 	}
 }

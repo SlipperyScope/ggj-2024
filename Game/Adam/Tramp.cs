@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Rainbow : Area2D
+public partial class Tramp : Area2D
 {
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -11,6 +11,6 @@ public partial class Rainbow : Area2D
 
 	private void onBodyEntered(Node2D body)
 	{
-        ((RigidBody2D)body).ApplyCentralImpulse(new Vector2(500f, -100f) * 10f);
+        ((RigidBody2D)body).ApplyCentralImpulse(new Vector2(0f, -100f) * 10f);
 	}
 }
