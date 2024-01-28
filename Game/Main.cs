@@ -1,15 +1,21 @@
 using Godot;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ggj2024;
 
 public partial class Main : Node
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
+    public override void _Ready()
+    {
+        // Call ChangeScene on the scene manager (who would have thought), make sure to set the res path
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
+        //if (this.HasChildOfType(out SceneChanger sceneChanger))
+        //{
+        //    sceneChanger.ChangeScene();
+        //}
+    }
 }

@@ -11,7 +11,20 @@ namespace ggj2024;
 /// </summary>
 public static class Global
 {
-    public static Single MaxDistance { get; set; }
-    public static Single MaxHeight { get; set; }
-    public static Single MaxTime { get; set; }
+    /// <summary>
+    /// IDK, but this way we don't have to hard code every single stat we may or may not want to store even though I don't like naked strings
+    /// </summary>
+    public static readonly Dictionary<String, StatValue> Stats = new();
+
+    /// <summary>
+    /// Stats dictionary value
+    /// </summary>
+    public interface StatValue { }
+
+    public record NumberStat(Single Value) : StatValue;
+    public record IntStat(Int32 Value) : StatValue;
+    public record BooleanStat(Boolean Value) : StatValue;
+    public record StringStat(String Value) : StatValue; 
+    public record ObjectStat(Object Value) : StatValue;
+    public record NodeStat(Node Value) : StatValue;
 }
