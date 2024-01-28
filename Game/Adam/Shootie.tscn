@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ctmja05wnsgy"]
 
-[ext_resource type="Script" path="res://Andrew/RigidBody2D.cs" id="1_jb31p"]
+[ext_resource type="Script" path="res://Andrew/A_RigidBody2D.cs" id="1_q36wm"]
 [ext_resource type="Texture2D" uid="uid://b1vg8w768enlq" path="res://Assets/standin.png" id="2_1wiei"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6js6o"]
@@ -14,7 +14,7 @@ radius = 62.0322
 position = Vector2(-16, 126)
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_6js6o")
-script = ExtResource("1_jb31p")
+script = ExtResource("1_q36wm")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
