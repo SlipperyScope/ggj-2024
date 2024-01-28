@@ -26,13 +26,13 @@ public partial class SceneChanger : Node
     {
         if (ChangeOnReady is true)
         {
-            var error = ChangeScene();
-            if (error is not Error.Ok)
-            {
-                GD.PrintErr($"{error}: {NextScene}");
-            }
+            /*var error = */CallDeferred(nameof(ChangeScene));
+            //if (error is not Error.Ok)
+            //{
+            //    GD.PrintErr($"{error}: {NextScene}");
+            //}
 
-            return;
+            //return;
         }
 
         if (BindToButton is not null)

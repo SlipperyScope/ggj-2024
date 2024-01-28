@@ -9,5 +9,5 @@ script = ExtResource("1_pet3q")
 [node name="SceneChanger" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("2_nx7vm")
-NextScene = "res://KillingFields.tscn"
+NextScene = "res://MainMenu.tscn"
 ChangeOnReady = true
