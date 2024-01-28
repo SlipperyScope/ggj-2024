@@ -1,0 +1,142 @@
+[gd_scene load_steps=11 format=3 uid="uid://b1ouctqqw5q3m"]
+
+[ext_resource type="PackedScene" uid="uid://cu8p65gvhd6bc" path="res://Character.tscn" id="1_8o1o6"]
+[ext_resource type="Texture2D" uid="uid://5s3i2awt8t2a" path="res://Assets/Art/creator/btn-head.png" id="2_nqjdm"]
+[ext_resource type="Texture2D" uid="uid://ddqjkoo7khtbh" path="res://Assets/Art/creator/btn-head-active.png" id="3_gq0pc"]
+[ext_resource type="Texture2D" uid="uid://blmx0wxoly4mb" path="res://Assets/Art/creator/btn-body.png" id="4_h4ghy"]
+[ext_resource type="Texture2D" uid="uid://b2q1t33ly6sv6" path="res://Assets/Art/creator/btn-body-active.png" id="5_sl4uy"]
+[ext_resource type="Texture2D" uid="uid://dvuhqy8jc4n1h" path="res://Assets/Art/creator/btn-legs.png" id="6_5qijf"]
+[ext_resource type="Texture2D" uid="uid://bmj6cxn5j8qnr" path="res://Assets/Art/creator/btn-legs-active.png" id="7_fk2a8"]
+[ext_resource type="Texture2D" uid="uid://crwrbk7w1qn15" path="res://Assets/Art/creator/btn-left.png" id="8_85hog"]
+[ext_resource type="Texture2D" uid="uid://dcjmfryx7xcwt" path="res://Assets/Art/creator/btn-right.png" id="9_o5i3h"]
+[ext_resource type="PackedScene" uid="uid://ceya46s1maej3" path="res://CharacterCreatorParts/Slider.tscn" id="11_sbkc4"]
+
+[node name="CharacterCreator" type="Node2D"]
+
+[node name="Character" parent="." instance=ExtResource("1_8o1o6")]
+position = Vector2(451, 565)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1048.0
+offset_top = 44.0
+offset_right = -41.0
+offset_bottom = -59.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="HSplitContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+offset_right = 2002.0
+offset_bottom = 2010.0
+scale = Vector2(0.5, 0.5)
+
+[node name="VSplitContainer" type="HFlowContainer" parent="CanvasLayer/Control/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Control/HSplitContainer/VSplitContainer"]
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("2_nqjdm")
+texture_pressed = ExtResource("3_gq0pc")
+stretch_mode = 4
+
+[node name="TextureButton2" type="TextureButton" parent="CanvasLayer/Control/HSplitContainer/VSplitContainer"]
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("4_h4ghy")
+texture_pressed = ExtResource("5_sl4uy")
+
+[node name="TextureButton3" type="TextureButton" parent="CanvasLayer/Control/HSplitContainer/VSplitContainer"]
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("6_5qijf")
+texture_pressed = ExtResource("7_fk2a8")
+
+[node name="HeadPanel" type="Panel" parent="CanvasLayer/Control/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HFlowContainer" type="VBoxContainer" parent="CanvasLayer/Control/HSplitContainer/HeadPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.997
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = 36.0
+offset_right = -29.233
+offset_bottom = -30.0
+
+[node name="VFlowContainer" type="VFlowContainer" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer/VFlowContainer"]
+layout_mode = 2
+texture_normal = ExtResource("8_85hog")
+
+[node name="Container" type="CenterContainer" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer/VFlowContainer"]
+custom_minimum_size = Vector2(1200, 150)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer/VFlowContainer/Container"]
+clip_contents = false
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 60
+text = "Poop Guy"
+fit_content = true
+autowrap_mode = 0
+
+[node name="TextureButton2" type="TextureButton" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer/VFlowContainer"]
+layout_mode = 2
+texture_normal = ExtResource("9_o5i3h")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/default_color = Color(0.752941, 0.231373, 0.611765, 1)
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "[b]Eyes[/b]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Slider" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer" instance=ExtResource("11_sbkc4")]
+layout_mode = 2
+Label = "Left Size"
+
+[node name="Slider2" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer" instance=ExtResource("11_sbkc4")]
+layout_mode = 2
+Label = "Right Size"
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/default_color = Color(0.752941, 0.231373, 0.611765, 1)
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "[b]Mouth[/b]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Slider3" parent="CanvasLayer/Control/HSplitContainer/HeadPanel/HFlowContainer" instance=ExtResource("11_sbkc4")]
+layout_mode = 2
