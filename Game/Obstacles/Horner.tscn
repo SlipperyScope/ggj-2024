@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bii52d0ahj48f"]
+
+[ext_resource type="Script" path="res://Adam/Horner.cs" id="1_q2whw"]
+[ext_resource type="Texture2D" uid="uid://b8wjtgounutrb" path="res://Assets/horn.png" id="2_f4gji"]
+[ext_resource type="AudioStream" uid="uid://br1d8b5kyl065" path="res://Assets/Horn.mp3" id="3_psvwa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5mfw"]
+size = Vector2(248, 146)
+
+[node name="Horner" type="Area2D"]
+collision_mask = 3
+script = ExtResource("1_q2whw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -13)
+shape = SubResource("RectangleShape2D_r5mfw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.277344, 0.277344)
+texture = ExtResource("2_f4gji")
+
+[node name="HornPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_psvwa")

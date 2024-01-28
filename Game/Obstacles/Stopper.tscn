@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cayatv3hfh5i3"]
+
+[ext_resource type="Script" path="res://Adam/Stopper.cs" id="1_e5wp4"]
+[ext_resource type="Texture2D" uid="uid://o0swchcrchwu" path="res://Assets/ClockHead.png" id="2_5lgqi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujppv"]
+size = Vector2(129, 481)
+
+[node name="Stopper" type="Area2D"]
+collision_mask = 3
+script = ExtResource("1_e5wp4")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-23.5, 192.5)
+shape = SubResource("RectangleShape2D_ujppv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-23.25, 193.377)
+scale = Vector2(0.740223, 2.36705)
+texture = ExtResource("2_5lgqi")

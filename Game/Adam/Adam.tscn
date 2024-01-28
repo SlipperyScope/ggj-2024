@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c8xgpruoc20da"]
+[gd_scene load_steps=12 format=3 uid="uid://c8xgpruoc20da"]
 
 [ext_resource type="Script" path="res://Andrew/RigidBody2D.cs" id="1_kesc2"]
 [ext_resource type="Texture2D" uid="uid://baqxei4q5k1s8" path="res://Assets/Art/background/bg-layer-2.png" id="1_s4gc8"]
@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dhtbwhrf42js1" path="res://Assets/Art/background/bg-layer-1.png" id="2_pstka"]
 [ext_resource type="Script" path="res://Adam/Ground.cs" id="3_wsdh5"]
 [ext_resource type="PackedScene" uid="uid://b1r6tes0vc4r" path="res://Obstacles/Booster.tscn" id="6_re4wa"]
-[ext_resource type="Texture2D" uid="uid://o0swchcrchwu" path="res://Assets/ClockHead.png" id="7_grwh4"]
-[ext_resource type="Script" path="res://Adam/Stopper.cs" id="7_o63lu"]
+[ext_resource type="PackedScene" uid="uid://cayatv3hfh5i3" path="res://Obstacles/Stopper.tscn" id="7_ryvgh"]
+[ext_resource type="PackedScene" uid="uid://bii52d0ahj48f" path="res://Obstacles/Horner.tscn" id="8_syb7l"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6js6o"]
 friction = 0.79
@@ -18,9 +18,6 @@ radius = 62.0322
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6ynv"]
 size = Vector2(128.052, 135.713)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujppv"]
-size = Vector2(129, 481)
 
 [node name="Adam" type="Node2D"]
 position = Vector2(119, 762)
@@ -83,17 +80,8 @@ region_rect = Rect2(0, 0, 100000, 1644.43)
 [node name="Booster" parent="." instance=ExtResource("6_re4wa")]
 position = Vector2(3972, -418)
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(27551, -132)
-collision_mask = 3
-script = ExtResource("7_o63lu")
-metadata/_edit_group_ = true
+[node name="Stopper" parent="." instance=ExtResource("7_ryvgh")]
+position = Vector2(24181, -110)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-23.5, 192.5)
-shape = SubResource("RectangleShape2D_ujppv")
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(-23.25, 193.377)
-scale = Vector2(0.740223, 2.36705)
-texture = ExtResource("7_grwh4")
+[node name="Horner" parent="." instance=ExtResource("8_syb7l")]
+position = Vector2(3674, -249)
