@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://d4mice2bm7720"]
+[gd_scene load_steps=5 format=3 uid="uid://d4mice2bm7720"]
 
 [ext_resource type="Script" path="res://SceneChanger.cs" id="1_80cr1"]
 [ext_resource type="Script" path="res://QuitGameButton.cs" id="2_bpoa6"]
+[ext_resource type="Texture2D" uid="uid://xmqi1dapltw7" path="res://Assets/Art/background/bg-menu.png" id="3_cj6r6"]
+[ext_resource type="Texture2D" uid="uid://relwln7l5bjb" path="res://Assets/logo.png" id="4_vd5s6"]
 
 [node name="MainMenu" type="Node2D"]
 
@@ -15,6 +17,11 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="Logo" type="Sprite2D" parent="CanvasLayer/PanelContainer"]
+position = Vector2(960, 233)
+scale = Vector2(0.734694, 0.734694)
+texture = ExtResource("4_vd5s6")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PanelContainer"]
 layout_mode = 2
@@ -35,7 +42,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
-text = "UNTITLED GAME THAT WE WON'T FINISH ANYWAY LOL"
+text = " "
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -83,3 +90,8 @@ size_flags_vertical = 3
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="Bg-menu" type="Sprite2D" parent="."]
+position = Vector2(961, 674)
+scale = Vector2(0.917333, 0.917333)
+texture = ExtResource("3_cj6r6")
