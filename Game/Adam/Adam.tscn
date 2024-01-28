@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8xgpruoc20da"]
+[gd_scene load_steps=12 format=3 uid="uid://c8xgpruoc20da"]
 
 [ext_resource type="PackedScene" uid="uid://ctmja05wnsgy" path="res://Adam/Shootie.tscn" id="1_0f0x5"]
 [ext_resource type="Texture2D" uid="uid://baqxei4q5k1s8" path="res://Assets/Art/background/bg-layer-2.png" id="1_s4gc8"]
@@ -6,43 +6,20 @@
 [ext_resource type="PackedScene" uid="uid://beivyb34yafdi" path="res://Adam/Follower.tscn" id="2_rysyn"]
 [ext_resource type="PackedScene" uid="uid://b1r6tes0vc4r" path="res://Obstacles/Booster.tscn" id="6_re4wa"]
 [ext_resource type="PackedScene" uid="uid://bii52d0ahj48f" path="res://Obstacles/Horner.tscn" id="8_syb7l"]
+[ext_resource type="Script" path="res://Adam/KittenCannon.cs" id="9_8afkg"]
+[ext_resource type="Texture2D" uid="uid://d25c3eeqowvrh" path="res://Assets/ShooterBase.png" id="9_755ia"]
 [ext_resource type="PackedScene" uid="uid://y2n3hmbmlwik" path="res://Obstacles/Tramp.tscn" id="9_dphwx"]
 [ext_resource type="PackedScene" uid="uid://cki25ue47pcsl" path="res://Obstacles/GoFast.tscn" id="9_etkhx"]
+[ext_resource type="Texture2D" uid="uid://ws776jy1llmq" path="res://Assets/ShooterRotateyPart.png" id="10_o3txj"]
 
 [node name="Adam" type="Node2D"]
 position = Vector2(119, 762)
 
 [node name="Shootie" parent="." instance=ExtResource("1_0f0x5")]
+position = Vector2(6, 168)
 
 [node name="Follower" parent="." node_paths=PackedStringArray("shootie") instance=ExtResource("2_rysyn")]
 shootie = NodePath("../Shootie")
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-visible = false
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(30334, 188)
-motion_scale = Vector2(0.1, 0.1)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-texture_repeat = 3
-position = Vector2(-942, 321)
-scale = Vector2(0.587826, 0.587826)
-texture = ExtResource("1_s4gc8")
-region_enabled = true
-region_rect = Rect2(0, 0, 100000, 1878.48)
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(3117, 243)
-motion_scale = Vector2(0.2, 0.2)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-texture_repeat = 2
-position = Vector2(17749, 485)
-scale = Vector2(0.417375, 0.417375)
-texture = ExtResource("2_pstka")
-region_enabled = true
-region_rect = Rect2(0, 0, 100000, 1644.43)
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 
@@ -82,3 +59,19 @@ scale = Vector2(1.8, 1.8)
 
 [node name="GoFast" parent="." instance=ExtResource("9_etkhx")]
 position = Vector2(3864, 136)
+
+[node name="KittenCannon" type="Node2D" parent="." node_paths=PackedStringArray("shootie")]
+position = Vector2(-25, 166)
+script = ExtResource("9_8afkg")
+shootie = NodePath("../Shootie")
+
+[node name="body" type="Sprite2D" parent="KittenCannon"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("9_755ia")
+
+[node name="arm" type="Sprite2D" parent="KittenCannon"]
+position = Vector2(-9.99998, -64)
+rotation = -0.506145
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("10_o3txj")
+centered = false
