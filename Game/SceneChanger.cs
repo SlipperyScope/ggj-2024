@@ -13,6 +13,9 @@ public partial class SceneChanger : Node
     [Export(PropertyHint.File)]
     private string NextScene;
 
+    /// <summary>
+    /// Immediately change the scene when the node is loaded
+    /// </summary>
     [Export]
     protected Boolean ChangeOnReady { get; set; } = false;
 
@@ -27,5 +30,6 @@ public partial class SceneChanger : Node
             }
         }
     }
+
     public Error ChangeScene() => GetTree().ChangeSceneToFile(NextScene);
 }
