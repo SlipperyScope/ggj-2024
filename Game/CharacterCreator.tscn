@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://b1ouctqqw5q3m"]
 
-[ext_resource type="PackedScene" uid="uid://cu8p65gvhd6bc" path="res://Character.tscn" id="1_8o1o6"]
 [ext_resource type="Script" path="res://CharacterCreator.cs" id="1_mpkvc"]
+[ext_resource type="PackedScene" uid="uid://crmipqg2f6dtg" path="res://CharacterParts/Physicalation/Puppet.tscn" id="2_jd4i7"]
 [ext_resource type="Texture2D" uid="uid://5s3i2awt8t2a" path="res://Assets/Art/creator/btn-head.png" id="2_nqjdm"]
 [ext_resource type="Texture2D" uid="uid://ddqjkoo7khtbh" path="res://Assets/Art/creator/btn-head-active.png" id="3_gq0pc"]
 [ext_resource type="Texture2D" uid="uid://blmx0wxoly4mb" path="res://Assets/Art/creator/btn-body.png" id="4_h4ghy"]
@@ -15,8 +15,32 @@
 [node name="CharacterCreator" type="Node2D"]
 script = ExtResource("1_mpkvc")
 
-[node name="Character" parent="." instance=ExtResource("1_8o1o6")]
-position = Vector2(451, 565)
+[node name="Puppet" parent="." node_paths=PackedStringArray("EyeLeftSize", "EyeRightSize", "EyeLeftRotation", "EyeRightRotation", "EyeGap", "EyeDrift", "MouthPosition", "MouthWidth", "MouthHeight", "MouthRotation", "ChinStretch", "ChinWidth", "ChinElasticity", "HeadBaseWidth", "HeadBaseHeight", "HeadOrnamentDynamic", "LeftArmLength", "RightArmLength", "ArmElasticity", "HandsScale", "BodyOrnamentScale", "BodyOrnamentDynamic", "LegsScale", "LegsOrnamentDynamic") instance=ExtResource("2_jd4i7")]
+position = Vector2(440, 576)
+EyeLeftSize = NodePath("../CanvasLayer/UI/Split/HeadPanel/HFlowContainer/Slider")
+EyeRightSize = NodePath("../CanvasLayer/UI/Split/HeadPanel/HFlowContainer/Slider2")
+EyeLeftRotation = NodePath("../CanvasLayer/UI/Split/HeadPanel/HFlowContainer/Slider20")
+EyeRightRotation = NodePath("../CanvasLayer/UI/Split/HeadPanel/HFlowContainer/Slider21")
+EyeGap = NodePath("../CanvasLayer/UI/Split/HeadPanel/HFlowContainer/Slider18")
+EyeDrift = NodePath("../CanvasLayer/UI/Split/HeadPanel/HFlowContainer/Slider19")
+MouthPosition = NodePath("../CanvasLayer/UI/Split/HeadPanel/HFlowContainer/Slider3")
+MouthWidth = NodePath("../CanvasLayer/UI/Split/HeadPanel/HFlowContainer/Slider4")
+MouthHeight = NodePath("../CanvasLayer/UI/Split/HeadPanel/HFlowContainer/Slider5")
+MouthRotation = NodePath("../CanvasLayer/UI/Split/HeadPanel/HFlowContainer/Slider6")
+ChinStretch = NodePath("../CanvasLayer/UI/Split/HeadPanel/HFlowContainer/Slider8")
+ChinWidth = NodePath("../CanvasLayer/UI/Split/HeadPanel/HFlowContainer/Slider9")
+ChinElasticity = NodePath("../CanvasLayer/UI/Split/HeadPanel/HFlowContainer/Slider10")
+HeadBaseWidth = NodePath("../CanvasLayer/UI/Split/HeadPanel/HFlowContainer/Slider13")
+HeadBaseHeight = NodePath("../CanvasLayer/UI/Split/HeadPanel/HFlowContainer/Slider14")
+HeadOrnamentDynamic = NodePath("../CanvasLayer/UI/Split/HeadPanel/HFlowContainer/Slider15")
+LeftArmLength = NodePath("../CanvasLayer/UI/Split/BodyPanel/HFlowContainer/Slider")
+RightArmLength = NodePath("../CanvasLayer/UI/Split/BodyPanel/HFlowContainer/Slider2")
+ArmElasticity = NodePath("../CanvasLayer/UI/Split/BodyPanel/HFlowContainer/Slider20")
+HandsScale = NodePath("../CanvasLayer/UI/Split/BodyPanel/HFlowContainer/Slider3")
+BodyOrnamentScale = NodePath("../CanvasLayer/UI/Split/BodyPanel/HFlowContainer/Slider8")
+BodyOrnamentDynamic = NodePath("../CanvasLayer/UI/Split/BodyPanel/HFlowContainer/Slider9")
+LegsScale = NodePath("../CanvasLayer/UI/Split/LegsPanel/HFlowContainer/Slider15")
+LegsOrnamentDynamic = NodePath("../CanvasLayer/UI/Split/LegsPanel/HFlowContainer/Slider16")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -69,6 +93,7 @@ texture_normal = ExtResource("6_5qijf")
 texture_pressed = ExtResource("7_fk2a8")
 
 [node name="HeadPanel" type="ScrollContainer" parent="CanvasLayer/UI/Split"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -342,7 +367,6 @@ layout_mode = 2
 Label = "[Dynamic]"
 
 [node name="LegsPanel" type="ScrollContainer" parent="CanvasLayer/UI/Split"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 

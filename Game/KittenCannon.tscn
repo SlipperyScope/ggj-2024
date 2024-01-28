@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpwxr7skrn5pp"]
+
+[ext_resource type="Script" path="res://Adam/KittenCannon.cs" id="1_i58bj"]
+[ext_resource type="Texture2D" uid="uid://d25c3eeqowvrh" path="res://Assets/ShooterBase.png" id="2_jo64a"]
+[ext_resource type="Texture2D" uid="uid://ws776jy1llmq" path="res://Assets/ShooterRotateyPart.png" id="3_2qc0g"]
+[ext_resource type="AudioStream" uid="uid://dd3g1ylf1aw74" path="res://Assets/cannon.wav" id="4_0fq34"]
+
+[node name="KittenCannon" type="Node2D"]
+position = Vector2(-25, 166)
+script = ExtResource("1_i58bj")
+
+[node name="body" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_jo64a")
+
+[node name="arm" type="Sprite2D" parent="."]
+position = Vector2(-9.99998, -64)
+rotation = -0.506145
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_2qc0g")
+centered = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_0fq34")

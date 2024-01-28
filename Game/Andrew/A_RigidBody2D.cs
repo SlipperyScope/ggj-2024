@@ -4,12 +4,18 @@ using System;
 public partial class A_RigidBody2D : Godot.RigidBody2D
 {
     public int heightAbove = 0;
-    private Boolean isMoving = false;
+    public Boolean stopped = false;
     private Boolean reachedSpeed = false;
+    private Vector2 startPoint;
+    private float startFriction;
+    private float startBounce;
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         Freeze = true;
+        startPoint = GlobalPosition;
+        startFriction = PhysicsMaterialOverride.Friction;
+        startBounce = PhysicsMaterialOverride.Bounce;
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,9 +27,9 @@ public partial class A_RigidBody2D : Godot.RigidBody2D
             if (LinearVelocity.X < 150)
             {
                 PhysicsMaterialOverride.Bounce = 0.2f;
-                LinearVelocity = new Vector2(0f, 0f);
+                PhysicsMaterialOverride.Friction = 1f;
                 AngularVelocity = 0f;
-
+                stopped = true;
             }
             else if (LinearVelocity.X < 200)
             {
@@ -40,4 +46,13 @@ public partial class A_RigidBody2D : Godot.RigidBody2D
             reachedSpeed = true;
         }
     }
+
+    public void ResetPos()
+    {
+        GlobalPosition = startPoint;
+        PhysicsMaterialOverride.Friction = startFriction;
+        PhysicsMaterialOverride.Bounce = startBounce;
+        stopped = false;
+        reachedSpeed = false;
+    } 
 }

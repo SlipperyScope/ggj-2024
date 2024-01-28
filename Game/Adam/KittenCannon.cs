@@ -7,12 +7,14 @@ public partial class KittenCannon : Node2D
     public A_RigidBody2D shootie;
 
     private Sprite2D armSprite;
+    private AudioStreamPlayer audioPlayer;
 
     private Boolean hasShot = false;
 
 	public override void _Ready()
 	{
         armSprite = GetNode<Sprite2D>("arm");
+        audioPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
 	}
 
 	public override void _Process(double delta)
@@ -26,17 +28,27 @@ public partial class KittenCannon : Node2D
         if (Input.IsActionPressed("DownBuddon") && armSprite.RotationDegrees < -8)
         {
             armSprite.RotationDegrees += (float)(5 * delta);
+            GD.Print(armSprite.RotationDegrees);
         }
 
-        if (!hasShot && Input.IsActionPressed("Space"))
+        if (Input.IsActionJustPressed("Space"))
         {
-            hasShot = true;
-            ShootYourShot();
+            if (!hasShot)
+            {
+                hasShot = true;
+                ShootYourShot();
+            }
+            else if (shootie.stopped)
+            {
+                shootie.ResetPos();
+                hasShot = false;
+            }
         }
 	}
 
     private void ShootYourShot()
     {
+        audioPlayer.Play();
         shootie.Freeze = false;
         shootie.ApplyCentralImpulse(new Vector2(500, 0).Rotated(armSprite.Rotation) * 5f); //*5 for min, 10+ for max?
     }
