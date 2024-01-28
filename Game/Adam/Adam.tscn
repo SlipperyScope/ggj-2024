@@ -84,4 +84,4 @@ position = Vector2(3972, -418)
 position = Vector2(3674, -249)
 
 [node name="Tramp" parent="." instance=ExtResource("9_dphwx")]
-position = Vector2(26210, 218)
+position = Vector2(26136, 209)
