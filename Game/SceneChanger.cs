@@ -13,6 +13,9 @@ public partial class SceneChanger : Node
     [Export(PropertyHint.File)]
     private string NextScene;
 
+    [Export]
+    private Button BindToButton;
+
     /// <summary>
     /// Immediately change the scene when the node is loaded
     /// </summary>
@@ -28,6 +31,13 @@ public partial class SceneChanger : Node
             {
                 GD.PrintErr($"{error}: {NextScene}");
             }
+
+            return;
+        }
+
+        if (BindToButton is not null)
+        {
+            BindToButton.Pressed += () => ChangeScene();
         }
     }
 

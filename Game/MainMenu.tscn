@@ -1,0 +1,97 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk64kcd487f67"]
+
+[ext_resource type="Script" path="res://SceneChanger.cs" id="1_80cr1"]
+[ext_resource type="Script" path="res://QuitGameButton.cs" id="2_bpoa6"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "UNTITLED GAME THAT WE WON'T FINISH ANYWAY LOL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Ragdoll Workshop" type="Button" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+text = "Ragdoll Workshop"
+
+[node name="SceneChanger" type="Node" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/Ragdoll Workshop" node_paths=PackedStringArray("BindToButton")]
+script = ExtResource("1_80cr1")
+NextScene = "res://CharacterCreator.tscn"
+BindToButton = NodePath("..")
+
+[node name="Proving Grounds" type="Button" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+text = "Proving Grounds"
+
+[node name="SceneChanger2" type="Node" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer/Proving Grounds" node_paths=PackedStringArray("BindToButton")]
+script = ExtResource("1_80cr1")
+NextScene = "res://KillingFields.tscn"
+BindToButton = NodePath("..")
+
+[node name="MarginContainer4" type="MarginContainer" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="QuitGameButton" type="Button" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+script = ExtResource("2_bpoa6")
+
+[node name="MarginContainer5" type="MarginContainer" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer7" type="MarginContainer" parent="CanvasLayer/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
