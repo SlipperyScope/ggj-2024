@@ -50,6 +50,6 @@ public partial class KittenCannon : Node2D
     {
         audioPlayer.Play();
         shootie.Freeze = false;
-        shootie.ApplyCentralImpulse(new Vector2(500, 0).Rotated(armSprite.Rotation) * 5f); //*5 for min, 10+ for max?
+        shootie.ApplyCentralImpulse(new Vector2(500, 0).Rotated(armSprite.Rotation) * 8f); //*5 for min, 10+ for max?
     }
 }

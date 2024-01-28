@@ -15,7 +15,7 @@
 position = Vector2(119, 762)
 
 [node name="Shootie" parent="." instance=ExtResource("1_0f0x5")]
-position = Vector2(6, 168)
+position = Vector2(-50, 73)
 
 [node name="Follower" parent="." node_paths=PackedStringArray("shootie") instance=ExtResource("2_rysyn")]
 shootie = NodePath("../Shootie")
